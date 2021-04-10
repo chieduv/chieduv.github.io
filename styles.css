@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;700&display=swap');
 
-* {
+* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,6 +8,7 @@
 }
 
 div.nav-bar {
+    overflow: hidden;
     display: flex;
     justify-content: space-between;
     padding: 1rem 6rem;
@@ -20,8 +21,8 @@ div.logo {
     color: #bcc3c7;
 }
 
-ul.nav-links {
-    display: flex;
+ul.nav-items {
+    display: none;
     margin: 0;
     padding: 0;
 }
@@ -29,19 +30,86 @@ ul.nav-links {
 ul li {
     list-style: none;
     font-size: 1.1rem;
+    background: #304353 ;
 }
 
 ul li a {
     text-decoration: none;
     color: #88949B;
     padding: 0.5vw;
+    padding: 14px 16px;
+    display: block;
 }
+.nav-bar a.icon {
+    background: rgb(252, 246, 246);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
 ul li a:hover {
     color: #304353;
     background: #fff;
     padding: 0.5rem;
 }
+
+
+		
+@media screen and (max-width: 768px){
+
+	div.nav-bar{
+		display: flex;
+		justify-content: space-between;
+		padding: 1rem;
+		width: 100vw;
+        background-color: rgb(28, 43, 56);
+	}
+	div.logo{
+		font-size: 1.3rem;
+	}
+    div.nav-items{
+        display: block;
+       
+    }
+	ul.nav-link{
+        position: fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+        background-color: rgb(97, 126, 150);
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+	}
+	ul li{
+		margin: 0;
+		font-size: 1rem;
+        background: #304353 ;
+	}
+	
+	ul li a{
+		display: block;
+        
+	}
+	ul .nav-links.active{
+		left: 0;
+	}
+    nav{
+        flex-direction:column !important;
+        display:block  !important;
+    }
+	
+	
+
+
+}
+
+	
+	
 
 div.hero-section {
     background: #304353;
@@ -129,6 +197,31 @@ div.hero-background-pos {
     box-shadow: 2px 2px 15px 0 rgb(135 135 135 / 40%);
 }
 
+@media screen and (max-width: 768px){
+	div.hero-background{
+		padding: 3rem;
+	}
+	div.background{
+		padding: 10px 30px;
+		width: 350px;
+		height: 270p;
+	}
+	
+	div.background h4{
+		padding: 1rem;
+		font-size: 0.8rem;
+	}
+	
+	div.background p{
+		padding-left: 2rem;
+		font-size: 0.8rem;
+	}
+	
+	div.hero-background-pos {
+		display: none;
+	}
+}
+
 div.snapshot-team {
     background: #f0f0f0;
     text-align: center;
@@ -206,11 +299,45 @@ div.box1 h5 {
     color: #E44C65;
     font-size: 1rem;
 }
-
+@media screen and (max-width: 768px){
+	div.snapshot-team{
+		padding: 2rem;
+		background: #f0f0f0;
+		text-align: center;
+	}
+	
+	div.snapshot-team h2{
+		font-size: 1.2rem
+	}
+	
+	div.snapsot-team p{
+		font-size: 0.8rem;
+	}
+	
+	div.snapshot-box {
+		padding: 2rem 0rem;
+	}
+	
+	div.snapshot-box-content {
+		display: block;
+		flex-direction: column;
+	}
+	
+	div.box1{
+		width: 300px;
+		height: 200px;
+	}
+	
+	div.box3{
+		width: 300px;
+		height:230px;
+	}
+}
 div.gallery-section {
     background: #fff;
     padding: 4rem;
 }
+
 
 div.gallery-content {
     text-align: center;
@@ -237,15 +364,29 @@ div.gallery-img {
    padding-top: 3rem;
 }
 
+
 div.img {
     margin: 10px;
 }
 
 div.img img {
     width: 250px;
-    height: 180px;
+    height: 180px;   
 }
 
+@media screen and (max-width: 768px){
+	div.gallery-section{
+		padding: 2rem;
+	}
+	div.gallery-img{
+		padding: 2rem;
+	}
+    
+	
+	div.gallery-content h4{
+		font-size: 1.2rem;
+    }
+}
 div.footer {
     background: #304353;
     padding: 3rem;
@@ -341,6 +482,12 @@ div.footer-btn a {
 div.footer h6 {
     text-align: center;
     color: #88949B;
-    font-size: 1rem;
+    font-size: 1rem; 
     padding-top: 6rem;
+}
+@media screen and (max-width: 768px){
+	div.footer{
+		padding: 2rem
+	}
+
 }
